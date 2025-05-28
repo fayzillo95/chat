@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chat</title>
+    <style>
+        body {
+            background-color: aquamarine;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .contenir {
+            display: flex;
+            flex-direction: column;
+            width: 800px;
+            height: 1000px;
+            border: 3px inset rgb(51, 40, 40);
+            background-color: rgb(162, 180, 174);
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            margin: 0 0 10px 0;
+        }
+
+        form {
+            width: 100%;
+            height: 80px;
+            background-color: aquamarine;
+            border: 3px inset rgb(163, 180, 151);
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        input {
+            width: 80%;
+            height: 50px;
+            font-size: 24px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        button {
+            width: 18%;
+            height: 50px;
+            background-color: aquamarine;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #a0d4d4;
+        }
+
+        .chat {
+            flex-grow: 1;
+            height: 900px;
+            border: 3px inset rgb(131, 109, 167);
+            background-color: rgb(42, 48, 97);
+            overflow-y: auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .messages {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .messages li {
+            max-width: 60%;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            clear: both;
+            word-wrap: break-word;
+        }
+
+        /* O'z xabarlar o'ngda, yashil fon bilan */
+        .own-message {
+            background-color: #4caf50;
+            float: right;
+            text-align: right;
+        }
+
+        /* Boshqalar xabari chapda, ko‘k fon bilan */
+        .other-message {
+            background-color: #2196f3;
+            float: left;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenir">
+        <h1>User </h1>
+        <form>
+            <input type="text" name="message" id="inpuValue" autocomplete="off" placeholder="Xabar kiriting..." />
+            <button>Send</button>
+        </form>
+        <div class="chat">
+            <ul class="messages"></ul>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
