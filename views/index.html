@@ -151,13 +151,13 @@
 <body>
     <div class="contenir">
         <h1>User </h1>
+        <div class="chat">
+            <ul class="messages"></ul>
+        </div>
         <form>
             <input type="text" name="message" id="inpuValue" autocomplete="off" placeholder="Xabar kiriting..." />
             <button>Send</button>
         </form>
-        <div class="chat">
-            <ul class="messages"></ul>
-        </div>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
