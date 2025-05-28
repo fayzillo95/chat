@@ -1,9 +1,16 @@
-const socket = io()
+let ism = window.localStorage.getItem("name")
+
+const socket = io({
+    auth :{
+        ism
+    }
+})
+
+
 const button = document.getElementsByTagName("button")[0]
 const chat = document.querySelector(".messages")
 const inpuValue = document.querySelector("#inpuValue")
 const h1 = document.querySelector("h1")
-let ism = window.localStorage.getItem("name")
 h1.textContent += ism
 
 button.addEventListener('click', (event) => {
