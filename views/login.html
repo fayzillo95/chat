@@ -4,7 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+</head><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 400px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        #username {
+            width: 100%;
+            padding: 15px 10px;
+            font-size: 18px;
+            border: 2px solid #00838f;
+            border-radius: 8px;
+            box-sizing: border-box;
+            outline-color: #00acc1;
+            transition: border-color 0.3s ease;
+        }
+        #username:focus {
+            border-color: #00acc1;
+        }
+        .info-text {
+            margin-top: 15px;
+            color: #00796b;
+            font-size: 14px;
+        }
+    </style>
 </head>
+<body>
+    <div class="login-container">
+        <h2>Foydalanuvchi ismingizni kiriting</h2>
+        <input type="text" id="username" placeholder="Ismingizni kiriting" autocomplete="off" />
+        <div class="info-text">Enter tugmasini bosing yoki yozishni tugating</div>
+    </div>
+
+    <script src="./login.js"></script>
+</body>
+</html>
+
 <body>
     <div>
         <input type="text" name="" id="username">
